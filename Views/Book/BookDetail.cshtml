@@ -1,0 +1,27 @@
+﻿@model MvcLibrary.Models.Book  
+
+<div class="row">
+
+
+    <div class="col-6">
+
+        <div class="card bg-transparent mt-5" style="max-width: 30rem;">
+            <div class="card-header">Book Details</div>
+            <div class="card-body">
+                <h5 class="card-title mb-3">@Model.Title</h5>
+                <p class="card-text">Genre: @Model.Genre</p>
+                <p class="card-text">Author: @ViewBag.AuthorName @ViewBag.AuthorLastName</p>
+                <p class="card-text">Publish Date: @Model.PublishDate.ToShortDateString()</p>
+                <p class="card-text">ISBN Number: @Model.ISBN</p>
+                <p class="card-text">Copies Available: @Model.CopiesAvailable</p>
+            </div>
+        </div>
+
+        <a asp-controller="Book" asp-action="BookIndex" type="button" class="btn btn-outline-secondary radius col-4 mt-3">Cancel</a>
+    </div>
+
+    <div class="col-6">
+        <img class="h-100 w-100" src="~/photo15.jpg">
+    </div>
+</div>
+

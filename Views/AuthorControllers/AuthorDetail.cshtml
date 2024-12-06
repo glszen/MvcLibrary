@@ -1,0 +1,24 @@
+﻿@model MvcLibrary.Models.Author
+
+<div class="row">
+    <div class="col-6 mt-5">
+        <div class="card bg-transparent">
+            <div class="card-header">Author Details</div>
+            <div class="card-body">
+                <h5 class="card-title mb-3"> Author: @Model.AuthorName @Model.AuthorLastName</h5>
+                <p class="card-text">Date Of Birth: @Model.DateOfBirth.ToShortDateString()</p>
+            </div>
+        </div>
+        <div class="mt-4 col">
+            <a asp-controller="AuthorControllers" asp-action="AuthorIndex" type="button" class="btn btn-outline-secondary radius col-4 mt-2">Cancel</a>
+        </div>
+       
+    </div>
+ 
+
+    <div class="col-6">
+
+        <img class="h-100 w-100" src="~/photo17.jpg">
+    </div>
+</div>
+

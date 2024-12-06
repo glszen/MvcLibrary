@@ -1,0 +1,38 @@
+﻿@model MvcLibrary.Models.LibraryViewModel
+@{
+    ViewData["Title"] = "Library";
+}
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Book Genre</th>
+                <th>Book ISBN</th>
+                <th>Publish Date</th>
+                <th>Copies</th>
+                <th>Author Name</th>
+                <th>Author Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.Book)
+            {
+                var author = Model.Author.FirstOrDefault(a => a.Id == book.AuthorId);
+
+                <tr>
+                    <td>@(book != null ? book.Title : " Unkown")</td>
+                    <td>@book.Genre</td>
+                    <td>@book.ISBN</td>
+                    <td>@book.PublishDate.ToShortDateString()</td>
+                    <td>@book.CopiesAvailable</td>
+                    <td>@(author != null ? author.AuthorName : "Unkown")</td>
+                    <td>@(author != null ? author.AuthorLastName : "Unkown")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+  
+</div>

@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - MvcLibrary</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MvcLibrary.styles.css" asp-append-version="true" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yuji+Mai&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body class="background fontcolor yuji-mai-regular">
+    <header>
+            <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light mask-custom shadow-0 fontcolor">
+
+                <div class="col-9">
+
+                <a asp-controller="Home" asp-action="Index" class="collapse col-1 navbar-expand justify-content-start d-flex" id="navbarSupportedContent">
+                <img  style="height:140px; width:140px;" src="~/logo.png" />
+                </a>
+                </div>
+
+             
+                <div class="col-5 fontsizenavbar">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="About">ABOUT</a>
+                        </li>
+
+
+                        <div class="dropdown fontsizenavbar">
+                            <button class="btn dropdown-toggle fontsizenavbar" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                LIBRARY
+                            </button>
+                            <ul class="dropdown-menu fontcolor">
+                                <li><a class="dropdown-item" style="text-decoration: none; color:black" asp-area="" asp-controller="Book" asp-action="BookIndex">ADD BOOK</a></li>
+                                <li><a class="dropdown-item " style="text-decoration: none; color:black" asp-area="" asp-controller="AuthorControllers" asp-action="AuthorIndex">ADD AUTHOR </a></li>
+                                <li><a class="dropdown-item" style="text-decoration: none; color:black" asp-area="" asp-controller="Library" asp-action="LibraryIndex">ALL BOOK LIST</a></li>
+                            </ul>
+                        </div>
+       
+                    </ul>
+
+                </div>
+            </nav>
+            </div>
+
+        <partial name="_FooterPartial"/>
+
+    </header>
+
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+ 

@@ -1,0 +1,78 @@
+﻿@model EditViewModel
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+<div class="container">
+    <div class="row align-items-center py-4">
+        <div class="col-6 align-items-center">
+            <div class="py-2">
+                <h2 class="py-3">Edit Your Book to the System!</h2>
+                <p>Welcome to the Edit Page! On this page, you can update the following details of the book:</p>
+            </div>
+
+            <div>
+                If there is exist no author you want to add, <a asp-controller="AuthorControllers" asp-action="AuthorList" class="button fontcolor" style="font-weight:bold"> click here </a> to add it.
+            </div>
+
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="row py-4">
+                    <div class="col-5">
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label">Book Title</label>
+                            <input asp-for="Title" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <span asp-validation-for="Title" class="text-danger"> </span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Genre" class="form-label">Genre</label>
+                            <input asp-for="Genre" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <span asp-validation-for="Genre" class="text-danger"> </span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="AuthorId" class="form-label"></label>
+                            <select asp-for="AuthorId" asp-items="ViewBag.Authors" class="form-select">
+                                <option value="">Pick an Author</option>
+                            </select>
+                            <div class="form-text text-danger">
+                                <span asp-validation-for="AuthorId" class="text-danger"> </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-5">
+                        <div class="mb-3">
+                            <label asp-for="PublishDate" class="form-label">Publish Date</label>
+                            <input asp-for="PublishDate" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <span asp-validation-for="PublishDate" class="text-danger"> </span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ISBN" class="form-label">ISBN Number</label>
+                            <input asp-for="ISBN" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <span asp-validation-for="ISBN" class="text-danger"> </span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CopiesAvailable" class="form-label">Copies Available</label>
+                            <input asp-for="CopiesAvailable" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <span asp-validation-for="CopiesAvailable" class="text-danger"> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <button type="submit" class="btn btn-outline-secondary radius col-4 me-2">Save Changes</button>
+                    <a asp-controller="Book" asp-action="BookIndex" type="button" class="btn btn-outline-secondary radius col-4">Cancel</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <img class="h-75 w-75" src="~/photo18.jpg">
+        </div>
+    </div>
+</div>

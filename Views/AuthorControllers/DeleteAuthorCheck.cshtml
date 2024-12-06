@@ -1,0 +1,52 @@
+﻿@model Author
+@{
+	ViewBag.Title = "Delete Check";
+}
+
+
+<div class="row align-items-center">
+    <div class="col-6">
+        <h3>
+            <strong>Important:</strong> Deleting an author is a permanent action. Once deleted, the author cannot be recovered, and all related books will be removed. Please make sure you really want to delete the author before proceeding.
+        </h3>
+        <div class=" mt-4">
+            <button type="button" class="btn btn-outline-danger me-2 col-4" style="border-radius:15px" data-bs-toggle="modal" data-bs-target="#deleteAuthorModal">
+                Yes, Delete
+            </button>
+            <a asp-controller="AuthorControllers" asp-action="AuthorIndex" type="button" class="btn btn-outline-secondary col-4" style="border-radius:15px">Cancel</a>
+        </div>
+
+    </div>
+
+    <div class="col-6">
+
+        <img class="h-75 w-75" src="~/photo9.jpg">
+    </div>
+   
+</div>
+
+
+
+<div class="modal fade" id="deleteAuthorModal" tabindex="-1" aria-labelledby="deleteAuthorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteAuthorModalLabel">Delete Author</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="DeleteAuthor" asp-route-id="@Model.Id" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <p>
+                        Are you sure you want to delete the author named <strong>@Model.AuthorName</strong>?
+                    </p>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn btn-outline-danger radius">Yes, Delete</button>
+                        <button asp-controller="AuthorControllers" asp-action="AuthorIndex" type="button" class="btn btn-outline-secondary radius" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
