@@ -69,3 +69,9 @@ Testing for this project was carried out manually. The following methods were us
 - **Cross-Browser Testing:** The frontend design was tested across different browsers to ensure compatibility.
 
 By manually testing the system, I ensured that all features are working correctly, and the application is free from major issues.
+
+![mvc1](https://github.com/user-attachments/assets/6948f16f-5f77-4f62-933b-f82b089d5823)
+
+![mvc8](https://github.com/user-attachments/assets/7a6aab6c-3f71-4b59-9f03-17bb38b18d63)
+![mcv7](https://github.com/user-attachments/assets/886409c6-b1f0-42e4-b348-d86e3f19661b)
+![mvc6](https://github.com/user-attachments/assets/3b0b4b2a-315f-43a8-8412-d42bec735dde)
